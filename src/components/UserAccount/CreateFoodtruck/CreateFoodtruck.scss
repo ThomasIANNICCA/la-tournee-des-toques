@@ -1,0 +1,80 @@
+@use 'src/styles/variables' as v;
+
+.create-truck {
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+
+    h3 {
+      margin: 2rem 0 1rem;
+    }
+
+    .field-label {
+      background-color: v.$background-color;
+    }
+
+    .submit-section {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+
+      & .cancel-button {
+        margin-bottom: 1rem;
+      }
+    }
+
+    .create-truck__add-dish-button {
+      width: fit-content;
+      margin: 1rem auto;
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  & .field {
+    margin: 0;
+
+    &.number-field {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__new-dish {
+    margin-top: 1.5rem;
+  }
+
+  &__step1-succeed-msg {
+    margin-bottom: 2rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    .submit-section {
+      flex-direction: row;
+      justify-content: space-between;
+
+      & > * {
+        width: 100%;
+      }
+
+      & .cancel-button {
+        margin-bottom: 0;
+      }
+
+      & .light-button {
+        margin-left: 1rem;
+      }
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .dishes {
+      padding: 40px 0;
+    }
+  }
+}

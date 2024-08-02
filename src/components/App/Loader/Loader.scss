@@ -1,0 +1,44 @@
+@use 'src/styles/variables' as v;
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  &--full-page {
+    height: calc(100vh - 80px - 240px);
+  }
+
+  &__content {
+    width: 40px;
+    height: 40px;
+    border: solid 4px v.$lightgray-color;
+    border-radius: 50%;
+    border-top: solid 4px v.$primary-color;
+    animation: spin 1s linear infinite;
+
+    &--button {
+      width: 1.5rem;
+      height: 1.5rem;
+      border-top: solid 4px v.$background-color;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .loader {
+    &--full-page {
+      height: calc(100vh - 100px - 240px);
+    }
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

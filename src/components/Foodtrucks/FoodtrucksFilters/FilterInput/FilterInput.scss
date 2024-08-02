@@ -1,0 +1,14 @@
+@use 'src/styles/variables';
+
+.input-container {
+  border: 1px solid variables.$primary-color;
+  border-radius: 5px;
+  width: 100%;
+  margin: 5px 0px;
+  padding: 5px;
+}
+
+.input-container:hover {
+  background-color: variables.$primary-color;
+  color: variables.$background-color;
+}

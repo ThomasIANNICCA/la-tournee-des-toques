@@ -1,0 +1,295 @@
+@use 'reset';
+@use 'variables' as v;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+h1,
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+em {
+  font-style: italic;
+}
+
+.primary-title,
+.secondary-title,
+.highlight-title {
+  text-align: center;
+  color: v.$dark-color;
+  margin: 0 auto 40px;
+  position: relative;
+  z-index: 5;
+  width: fit-content;
+
+  &.first-line {
+    margin-bottom: 1rem;
+  }
+}
+
+.primary-title::before,
+.secondary-title::before,
+.highlight-title::before {
+  z-index: -1;
+  content: ' ';
+  position: absolute;
+  height: 65%;
+  width: 100%;
+  bottom: -5px;
+  left: 20px;
+}
+
+.primary-title::before {
+  background-color: v.$primary-color;
+}
+
+.secondary-title::before {
+  background-color: v.$background-color;
+}
+
+.highlight-title::before {
+  background-color: v.$highlight-color;
+}
+
+.cancel-button,
+.light-cancel-button,
+.light-button,
+.light-alert-button {
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+.light-button {
+  border: 2px solid v.$primary-color;
+  background-color: v.$background-color;
+  color: v.$primary-color;
+
+  &:hover {
+    background-color: v.$primary-color;
+    color: v.$background-color;
+  }
+
+  &--disabled {
+    color: v.$lightgray-color;
+    border-color: v.$lightgray-color;
+    cursor: not-allowed;
+
+    &:hover {
+      background-color: v.$background-color;
+      color: v.$lightgray-color;
+    }
+  }
+}
+
+.cancel-button {
+  border: 2px solid v.$dark-opacity-color;
+  color: v.$dark-opacity-color;
+  background-color: v.$background-color;
+
+  &:hover {
+    background-color: v.$dark-opacity-color;
+    color: v.$background-color;
+  }
+}
+
+.light-alert-button {
+  border: 2px solid v.$highlight-color;
+  color: v.$highlight-color;
+  background-color: v.$background-color;
+
+  &:hover {
+    background-color: v.$highlight-color;
+    color: v.$background-color;
+  }
+}
+
+.alternative-button {
+  border: 2px solid v.$dark-color;
+  background-color: v.$background-color;
+  color: v.$dark-color;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.alternative-button:hover {
+  background-color: v.$dark-color;
+  color: v.$background-color;
+}
+
+.button__icon {
+  margin: 0 0.5rem;
+  font-size: 1.2rem;
+  vertical-align: middle;
+  line-height: 1rem;
+
+  &-left {
+    margin-left: 0;
+  }
+
+  &-right {
+    margin-right: 0;
+  }
+}
+
+p.category {
+  display: inline;
+  background-color: v.$primary-color;
+  color: v.$background-color;
+  padding: 5px;
+  font-size: 0.8rem;
+  border-radius: 5px;
+  margin: 2px;
+}
+
+.tag {
+  font-size: 0.8rem;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 3px 3px 3px 0;
+  border: 1px solid v.$primary-color;
+  color: v.$primary-color;
+}
+
+.msg-alert {
+  color: v.$highlight-color;
+  font-weight: 700;
+  display: flex;
+}
+
+.msg-info {
+  background-color: v.$secondary-color;
+  border-radius: 5px;
+  padding: 1rem;
+  display: flex;
+}
+
+.confirm-delete-msg {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+  padding: 0.5rem;
+  border-radius: 5px;
+  background-color: v.$highlight-color;
+  color: v.$background-color;
+}
+
+.icon-buttons {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+
+  &__button {
+    border-radius: 5px;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    background-color: v.$background-color;
+
+    &:first-of-type {
+      margin-right: 0.5rem;
+    }
+
+    &-edit {
+      border: solid 1px v.$dark-color;
+      color: v.$dark-color;
+
+      &:hover {
+        color: v.$background-color;
+        background: v.$dark-color;
+      }
+    }
+
+    &-delete {
+      border: solid 1px v.$background-color;
+      color: v.$highlight-color;
+
+      &:hover {
+        color: v.$background-color;
+        background: v.$highlight-color;
+      }
+    }
+
+    &-cancel {
+      border: solid 1px v.$dark-opacity-color;
+      color: v.$dark-opacity-color;
+
+      &:hover {
+        color: v.$background-color;
+        background: v.$dark-opacity-color;
+      }
+    }
+  }
+}
+
+.align-center {
+  align-self: center;
+}
+
+input[type='file'] ::file-selector-button {
+  margin-right: 1rem;
+  border: solid 1px v.$primary-color;
+  color: v.$primary-color;
+  background: v.$background-color;
+  border-radius: 5px;
+  padding: 0.5rem;
+  cursor: pointer;
+
+  &:hover {
+    color: v.$background-color;
+    background: v.$primary-color;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .primary-title::before,
+  .secondary-title::before,
+  .highlight-title::before {
+    height: 55%;
+  }
+
+  h1,
+  h2 {
+    font-size: 4rem;
+  }
+
+  h3 {
+    font-size: 1.8rem;
+  }
+
+  .category,
+  .tag {
+    font-size: 1rem;
+  }
+
+  .icon-buttons {
+    &__button {
+      font-size: 1.5rem;
+
+      &:first-of-type {
+        margin-right: 1rem;
+      }
+    }
+  }
+}

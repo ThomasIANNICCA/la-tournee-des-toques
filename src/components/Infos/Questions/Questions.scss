@@ -1,0 +1,147 @@
+@use 'src/styles/variables';
+
+button,
+ul,
+li {
+  all: unset;
+}
+
+.questions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .highlight-title {
+    margin-top: 40px;
+  }
+
+  .tab-container {
+    border-radius: 5px;
+    border: 1px solid variables.$highlight-color;
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    background-color: variables.$background-color;
+    margin: 40px 0;
+
+    .tab-menu {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+    }
+
+    .tab {
+      flex: 1;
+      background-color: variables.$highlight-color;
+      font-size: 14px;
+      text-transform: uppercase;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px 5px;
+      font-weight: bold;
+
+      &.active {
+        background-color: variables.$background-color;
+      }
+
+      button {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: variables.$dark-color;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        text-decoration: none;
+      }
+    }
+
+    .tab:not(:last-child) {
+      border-right: 1px solid variables.$background-color;
+    }
+
+    .tab:first-of-type {
+      border-top-left-radius: 5px;
+    }
+
+    .tab:last-of-type {
+      border-top-right-radius: 5px;
+    }
+
+    .tab-panels {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      padding: 20px;
+
+      .panel {
+        &.active {
+          display: block;
+        }
+        display: none;
+
+        h3 {
+          font-size: 24px;
+          color: variables.$dark-color;
+          margin-bottom: 16px;
+        }
+
+        p {
+          font-size: 16px;
+          line-height: 24px;
+          margin-bottom: 20px;
+        }
+
+        button {
+          padding: 8px 20px;
+          color: variables.$background-color;
+          background-color: variables.$dark-color;
+          border-radius: 4px;
+          font-size: 14px;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+          cursor: pointer;
+
+          &:hover {
+            opacity: 0.9;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .tab-container {
+    .tab-menu {
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .tab {
+      flex: 1;
+      padding: 28px;
+
+      a {
+        padding: 0;
+      }
+    }
+
+    .tab:not(:last-child) {
+      border-bottom: none;
+      border-right: 2px solid variables.$background-color;
+    }
+
+    .tab-panels {
+      padding: 48px;
+    }
+  }
+}

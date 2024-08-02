@@ -1,0 +1,31 @@
+@use 'src/styles/variables' as v;
+
+.msg {
+  display: flex;
+  justify-content: center;
+
+  &__container {
+    padding: 0.5rem;
+    border-radius: 5px;
+    width: fit-content;
+    
+    .msg__content {
+      margin-left: 0.5rem;
+    }
+    
+    .msg__icon {
+      vertical-align: middle;
+      line-height: 1rem;
+    }
+  
+    &.msg-success {
+      border: solid v.$primary-color 1px;
+      background-color: v.$primary-color;
+    }
+  
+    &.msg-failed {
+      border: solid v.$highlight-color 1px;
+      background-color: v.$highlight-color;
+    }
+  }
+}

@@ -1,0 +1,44 @@
+@use 'src/styles/variables';
+
+.animations {
+  padding: 40px 20px;
+  background-color: variables.$secondary-color;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &-container {
+    padding: 20px 0;
+    align-self: flex-start;
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    height: 100%;
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+  &-container::-webkit-scrollbar {
+    height: 10px;
+    background-color: variables.$background-color;
+    border-radius: 5px;
+  }
+
+  &-container::-webkit-scrollbar-thumb {
+    background-color: variables.$dark-color;
+    border-radius: 5px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .animations {
+    padding: 40px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .animations {
+    padding: 40px 220px;
+  }
+}

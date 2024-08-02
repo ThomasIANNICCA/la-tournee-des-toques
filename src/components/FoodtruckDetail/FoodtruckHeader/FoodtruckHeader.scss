@@ -1,0 +1,96 @@
+@use 'src/styles/variables' as v;
+
+.foodtruck-header {
+  height: 350px;
+  width: 100%;
+  position: relative;
+
+  .foodtruck-image {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+
+  .foodtruck-content {
+    background-color: #00000042;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    color: v.$background-color;
+
+    .foodtruck-title-container {
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      .foodtruck-location {
+        margin-top: 20px;
+        border-radius: 50%;
+        height: 50px;
+        width: 50px;
+        background-color: v.$primary-color;
+        color: v.$background-color;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .primary-title {
+        color: v.$background-color;
+        margin: 0;
+      }
+    }
+
+    .foodtruck-description {
+      text-align: justify;
+    }
+
+    .foodtruck-categories {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+
+      .category {
+        margin: 5px 10px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .foodtruck-header {
+    height: 800px;
+
+    .foodtruck-content {
+      height: 300px;
+      top: 50%;
+      transform: translateY(-50%);
+
+      .foodtruck-title-container {
+        flex-direction: row;
+
+        .foodtruck-location {
+          font-size: 32px;
+          height: 80px;
+          width: 80px;
+          margin-left: 50px;
+        }
+      }
+
+      .foodtruck-description {
+        text-align: center;
+      }
+    }
+  }
+}

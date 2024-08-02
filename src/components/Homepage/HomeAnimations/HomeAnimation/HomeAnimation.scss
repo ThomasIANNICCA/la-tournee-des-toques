@@ -1,0 +1,51 @@
+@use 'src/styles/variables';
+
+.animations-item {
+  border-radius: 5px;
+  min-height: 250px;
+  min-width: 200px;
+  margin-right: 20px;
+  position: relative;
+
+  &-image {
+    border-radius: 5px;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  &-content {
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #00000042;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    .animations-item-title {
+      color: variables.$background-color;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .animations-item-date {
+      color: #fff;
+      text-align: center;
+    }
+  }
+}
+
+.animations-item:last-of-type {
+  margin-right: 0px;
+}
+
+@media screen and (min-width: 768px) {
+  .animations-item {
+    min-height: 500px;
+    min-width: 400px;
+  }
+}

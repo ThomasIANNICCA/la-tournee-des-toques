@@ -1,0 +1,77 @@
+@use 'src/styles/variables' as v;
+
+.field {
+  position: relative;
+  width: 100%;
+  max-width: fit-content;
+  margin: auto;
+
+  .field-input {
+    font-family: inherit;
+    font-size: inherit;
+    outline: solid 1px v.$dark-color;
+    border-radius: 5px;
+    border: none;
+    padding: 0.5rem 3rem 0.5rem 0.5rem;
+    width: 300px;
+    max-width: 100%;
+    margin: 1.5rem 0 0.5rem 0;
+    background: transparent;
+    transition: all 0.2s;
+
+    &::placeholder {
+      color: transparent;
+    }
+
+    &:focus {
+      outline: solid 2px v.$primary-color;
+
+      & ~ .field-icon,
+      & ~ .field-label {
+        color: v.$primary-color;
+      }
+    }
+
+    &--disabled {
+      outline: solid 1px grey;
+
+      & ~ .field-label {
+        color: grey;
+      }
+    }
+
+    &.textarea {
+      width: 1500px;
+      max-width: 100%;
+      padding: 1rem;
+      height: 10rem;
+    }
+  }
+
+  .field-label {
+    position: absolute;
+    left: 10px;
+    top: 2.3rem;
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+    transition: all 0.2s;
+
+    &--filled {
+      top: 1rem;
+      background-color: v.$background-color;
+    }
+  }
+
+  .field-icon {
+    font-size: 1.5rem;
+    position: absolute;
+    right: 0.5rem;
+    top: 2rem;
+  }
+}
+
+.field-note {
+  font-style: italic;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+}

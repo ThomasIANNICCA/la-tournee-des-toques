@@ -1,0 +1,15 @@
+.foodtrucks-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 0;
+
+  .foodtrucks-header {
+    padding-bottom: 40px;
+  }
+
+  .foodtrucks-description {
+    text-align: justify;
+  }
+}

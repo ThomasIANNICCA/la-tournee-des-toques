@@ -1,0 +1,15 @@
+.animations-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 0;
+
+  .animations-header {
+    padding-bottom: 40px;
+  }
+
+  .animations-description {
+    text-align: justify;
+  }
+}

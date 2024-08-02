@@ -1,0 +1,63 @@
+@use 'src/styles/variables';
+.dishes {
+  width: 100%;
+  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: variables.$primary-color;
+
+  &-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .dishes-list-title {
+      font-size: 1.5rem;
+      margin: 40px 0;
+      color: variables.$background-color;
+      text-align: start;
+      font-family: 'Titan One', sans-serif;
+    }
+
+    .dishes-list-items {
+      overflow-x: auto;
+      padding: 40px 0 20px 0;
+      display: flex;
+      flex-direction: row;
+      height: 100%;
+      width: auto;
+    }
+
+    .dishes-list-items::-webkit-scrollbar {
+      height: 10px;
+      background-color: variables.$background-color;
+      border-radius: 5px;
+    }
+
+    .dishes-list-items::-webkit-scrollbar-thumb {
+      background-color: variables.$dark-color;
+      border-radius: 5px;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .dishes {
+    &-container {
+      .dishes-list-items {
+        padding: 110px 0 40px 0;
+      }
+      .dishes-list-title {
+        font-size: 2rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .dishes {
+    padding: 40px 220px;
+  }
+}

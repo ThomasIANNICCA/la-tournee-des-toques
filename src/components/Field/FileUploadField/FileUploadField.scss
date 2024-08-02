@@ -1,0 +1,48 @@
+@use 'src/styles/variables' as v;
+
+.file-upload-field {
+  position: relative;
+  width: fit-content;
+
+  .field-input {
+    padding: 1rem 3rem 1rem 1rem;
+    font-family: inherit;
+    font-size: inherit;
+    outline: solid 1px v.$dark-color;
+    border-radius: 5px;
+    width: 500px;
+    max-width: 100%;
+    margin: 1rem 0 0.5rem 0;
+  }
+
+  .field-label {
+    position: absolute;
+    left: 10px;
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+    top: 0.5rem;
+    background-color: v.$background-color;
+  }
+
+  .field-note {
+    font-style: italic;
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+  }
+
+  & .file-remove-btn {
+    position: absolute;
+    right: 0.8rem;
+    top: 1.8rem;
+    font-size: 1.5rem;
+    color: v.$lightgray-color;
+
+    &:hover {
+      color: #999999;
+    }
+  }
+}
+
+.field__current-picture {
+  margin-top: 1rem;
+}

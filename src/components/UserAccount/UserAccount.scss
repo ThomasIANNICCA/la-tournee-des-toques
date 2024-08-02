@@ -1,0 +1,88 @@
+@use 'src/styles/variables' as v;
+
+.account {
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__table-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 1.5rem auto;
+
+    &.single-content {
+      .user-foodtruck {
+        width: 100%;
+      }
+    }
+
+    & p {
+      margin-bottom: 1rem;
+    }
+
+    .account__personal-infos,
+    .account__personnal-infos__form {
+      display: flex;
+      flex-direction: column;
+
+      .field-input--disabled {
+        font-style: italic;
+      }
+    }
+  }
+
+  h3 {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .cancel-button,
+  .light-button {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .button__container {
+    display: flex;
+    flex-direction: column;
+
+    .cancel-button {
+      margin-bottom: 0;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    &__table-container {
+      width: fit-content;
+
+      .account__personnal-infos__form {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        section:first-of-type {
+          margin-right: 5rem;
+        }
+      }
+    }
+
+    .button__container {
+      flex-direction: row;
+
+      .cancel-button {
+        margin-bottom: 2rem;
+      }
+
+      .light-button {
+        flex-grow: 1;
+        margin-left: 2rem;
+      }
+    }
+  }
+}

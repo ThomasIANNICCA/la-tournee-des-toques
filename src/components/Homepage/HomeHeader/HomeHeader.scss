@@ -1,0 +1,72 @@
+@use 'src/styles/variables' as v;
+
+.header {
+  height: calc(100vh - 60px);
+  background-image: url('/src/assets/images/homepage/homepage_header.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  
+  &-container {
+    width: 100%;
+    padding: 20px;
+    background-color: v.$dark-opacity-color;
+    color: v.$background-color;
+    
+    .header-title {
+      font-size: 32px;
+      padding-bottom: 40px;
+      position: relative;
+    }
+    
+    .header-title span {
+      position: absolute;
+      bottom: 0;
+      left: 105px;
+    }
+    
+    .header-content {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    height: calc(100vh - 80px);
+
+    &-container {
+      padding: 20px 40px;
+
+      .header-title {
+        font-size: 64px;
+        padding-bottom: 60px;
+      }
+
+      .header-title span {
+        position: absolute;
+        left: 210px;
+      }
+
+      .header-description {
+        font-size: 32px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .header {
+    &-container {
+      padding: 20px 220px;
+    }
+  }
+}

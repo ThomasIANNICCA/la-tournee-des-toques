@@ -1,0 +1,72 @@
+@use 'src/styles/variables';
+
+.error404 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+  height: 65vh;
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .background-truck {
+      position: relative;
+      width: 100%;
+      height: 200px;
+      background-image: url('../../assets/images/error404/road.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+
+      .foodtruck {
+        position: absolute;
+        bottom: 10px;
+        left: 0;
+        width: 175px;
+        animation: drive 3s infinite linear;
+      }
+    }
+
+    .message {
+      margin: 20px 0;
+      text-align: center;
+    }
+
+    .buttons {
+      margin-top: 20px;
+    }
+  }
+}
+
+@keyframes drive {
+  0% {
+    transform: translateX(0);
+  }
+  30% {
+    transform: translateX(60%);
+  }
+  100% {
+    transform: translateX(60%);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .error404 {
+    height: 80vh;
+    &-content {
+      .background-truck {
+        height: 300px;
+
+        .foodtruck {
+          bottom: 50px;
+          width: 220px;
+        }
+      }
+    }
+  }
+}

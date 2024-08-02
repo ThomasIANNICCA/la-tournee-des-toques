@@ -1,0 +1,63 @@
+@use 'src/styles/variables' as v;
+
+.foodtrucks-item {
+  border-radius: 5px;
+  height: 175px;
+  width: 100%;
+  position: relative;
+  margin-bottom: 20px;
+
+  &-image {
+    border-radius: 5px;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+
+  &-content,
+  .foodtruck-item-banner {
+    border-radius: 5px;
+    display: flex;
+    background-color: v.$dark-opacity-color;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    .foodtrucks-item-title {
+      font-size: 1.2rem;
+      color: v.$background-color;
+      text-align: center;
+      margin-bottom: 5px;
+    }
+  }
+
+  &-content:hover {
+    background-color: transparent;
+
+    .foodtruck-item-banner {
+      background-color: v.$light-opacity-color;
+      top: calc((100% - 130px) / 2);
+      height: 130px;
+    }
+
+    .foodtrucks-item-title {
+      color: v.$dark-color;
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .foodtrucks-item {
+    height: 350px;
+    width: calc((100% - 20px) / 2);
+
+    .foodtrucks-item-title {
+      font-size: 1.5rem;
+    }
+  }
+}

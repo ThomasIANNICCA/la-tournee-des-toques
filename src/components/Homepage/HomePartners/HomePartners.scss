@@ -1,0 +1,81 @@
+@use 'src/styles/variables';
+
+.partners {
+  padding: 40px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &-container {
+    overflow: hidden;
+    padding: 0;
+    white-space: nowrap;
+    position: relative;
+
+    .partners-content {
+      display: inline-block;
+      animation: 30s slide infinite linear;
+    }
+
+    .partners-content img {
+      height: 50px;
+      margin: 0 40px;
+    }
+  }
+
+  .partners-container::before,
+  .partners-container::after {
+    position: absolute;
+    top: 0;
+    width: 50px;
+    height: 100%;
+    content: ' ';
+    z-index: 2;
+  }
+
+  .partners-container::before {
+    left: 0;
+    background: linear-gradient(
+      to left,
+      rgba(255, 255, 255, 0),
+      variables.$background-color
+    );
+  }
+
+  .partners-container::after {
+    right: 0;
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0),
+      variables.$background-color
+    );
+  }
+
+  .partners-container:hover .partners-content {
+    cursor: pointer;
+    animation-play-state: paused;
+  }
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .partners-container {
+    padding: 40px 0;
+  }
+  .partners .partners-container::before,
+  .partners .partners-container::after {
+    width: 250px;
+  }
+
+  .partners .partners-container .partners-content img {
+    height: 200px;
+  }
+}

@@ -1,0 +1,81 @@
+@use 'src/styles/variables' as v;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Titan+One&display=swap');
+
+.App {
+  background-color: v.$background-color;
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  color: v.$dark-color;
+
+  &.admin {
+    background-color: v.$admin-background-color;
+  }
+
+  main {
+    padding-top: 80px;
+    min-height: calc(100vh - 240px);
+  }
+
+  figure > img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  .admin-content h1,
+  .admin-content h2,
+  .admin-content h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    margin: 40px 0;
+  }
+
+  .admin-content h4,
+  .admin-content h5,
+  .admin-content h6 {
+    margin: 20px 0;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .admin-add-button {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .admin-error-message {
+    color: red;
+    margin: 40px 0;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: 'Titan One', sans-serif;
+  }
+
+  .pdg-lr {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: auto;
+  }
+
+  @media screen and (min-width: 768px) {
+    .pdg-lr {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    main {
+      padding-top: 100px;
+    }
+
+    .pdg-lr {
+      width: 80%;
+      max-width: 1500px;
+    }
+  }
+}

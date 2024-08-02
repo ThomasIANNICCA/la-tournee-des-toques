@@ -1,0 +1,9 @@
+@use 'src/styles/variables' as v;
+
+.create-dish {
+  &__form {
+    border: solid v.$dark-color 1px;
+    border-radius: 5px;
+    padding: 0 1rem 1rem 1rem;
+  }
+}

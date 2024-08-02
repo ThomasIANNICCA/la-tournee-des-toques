@@ -1,0 +1,36 @@
+@use 'src/styles/variables' as v;
+
+.select-field {
+  position: relative;
+  margin: 1rem 0 1rem 0;
+  max-width: 500px;
+  width: 100%;
+
+  // => select (with react-select component)
+  .css-13cymwt-control,
+  .css-t3ipsp-control {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: solid 1px v.$dark-color;
+    background-color: v.$background-color;
+
+    &:hover {
+      border: solid 1px v.$dark-color;
+    }
+  }
+
+  // => select:focus (with react-select component)
+  .css-t3ipsp-control {
+    box-shadow: none;
+  }
+
+  &-label {
+    position: absolute;
+    left: 10px;
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+    z-index: 5;
+    top: -0.5rem;
+    background-color: v.$background-color;
+  }
+}

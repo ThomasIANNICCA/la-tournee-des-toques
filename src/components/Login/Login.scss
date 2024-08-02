@@ -1,0 +1,41 @@
+@use 'src/styles/variables' as v;
+
+.login__page {
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  .login-form__submit-section {
+    margin-top: 1rem;
+
+    .login-form__msg {
+      margin-bottom: 1rem;
+    }
+  }
+
+  .forgotten-password {
+    margin-top: 2rem;
+    text-decoration: underline;
+  }
+
+  .submit-section {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media screen and (min-width: 768px) {
+    .submit-section {
+      flex-direction: row;
+      justify-content: space-between;
+
+      & > * {
+        width: 100%;
+      }
+
+      & .light-button {
+        margin-left: 1rem;
+      }
+    }
+  }
+}

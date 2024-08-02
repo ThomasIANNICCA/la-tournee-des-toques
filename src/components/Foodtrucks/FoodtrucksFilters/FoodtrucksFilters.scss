@@ -1,0 +1,20 @@
+@use 'src/styles/variables';
+
+.foodtrucks-filters {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 40px;
+
+  .filters-container {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 2px solid variables.$primary-color;
+  }
+}

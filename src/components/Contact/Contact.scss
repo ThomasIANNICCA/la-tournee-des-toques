@@ -1,0 +1,15 @@
+@use 'src/styles/variables';
+
+.contact {
+  &-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+
+    &-description {
+      text-align: justify;
+    }
+  }
+}
